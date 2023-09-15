@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ソースコード解説アプリ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>ソースコード解説アプリ</h1>
+    <form action="/" method="post">
+        <textarea name="code" placeholder="ソースコードを入力してください"></textarea>
+        <button type="submit">解説する</button>
+    </form>
+    <div class="result">
+        {% if explanation %}
+            <h2>解説:</h2>
+            <p>{{ explanation }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
